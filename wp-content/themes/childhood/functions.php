@@ -12,6 +12,11 @@
 
   add_theme_support('custom-logo');
   add_theme_Support('post-thumbnails');
+	
+function my_custom_admin_head_css() {
+	echo '<style>ul.config-error {display:none !important;}[data-config-field][aria-invalid="true"]{border-color: grey;}</style>';
+}
 
-  // Maps
+// add_action('admin_head', 'my_custom_admin_head_css');
+
 ?>
