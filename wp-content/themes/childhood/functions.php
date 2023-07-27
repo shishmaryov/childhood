@@ -13,10 +13,19 @@
   add_theme_support('custom-logo');
   add_theme_Support('post-thumbnails');
 	
-function my_custom_admin_head_css() {
-	echo '<style>ul.config-error {display:none !important;}[data-config-field][aria-invalid="true"]{border-color: grey;}</style>';
-}
+  add_theme_support('menus');
 
-// add_action('admin_head', 'my_custom_admin_head_css');
+  add_filter('nav_menu_link_attributes', 'filter_nav_menu_link_attributes', 10, 3);
+  function filter_nav_menu_link_attributes($atts, $item, $args) {
+    if ($args->menu=='Main') {
+      $atts['class'] = 'header__nav-item';
+
+      if ($item->current) {
+        $atts['class'] .= ' header__nav-item-active';
+      }
+    }
+
+    return $atts;
+  }
 
 ?>
