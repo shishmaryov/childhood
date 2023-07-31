@@ -8,7 +8,14 @@ Template Name: Игрушки
 
 <div class="toys">
             <div class="container">
+                <a href="
+                <?php
+                    $link = get_category_link( '3' );
+                    echo $link;
+                ?> ">
                 <h2 class="subtitle">Мягкие игрушки</h2>
+                </a>
+                
                 <div class="toys__wrapper">
 
                     <?php
@@ -51,8 +58,14 @@ Template Name: Игрушки
                     ?>
                 </div>
 
-
-                <h2 class="subtitle">Развивающие игрушки</h2>
+                <a href="
+                <?php
+                    $link = get_category_link( '4' );
+                    echo $link;
+                ?>
+                ">
+                    <h2 class="subtitle">Развивающие игрушки</h2>
+                </a>
                 <div class="toys__wrapper">
                 <?php
                         $my_posts = get_posts( array(
